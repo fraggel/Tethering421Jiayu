@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tethering421Jiayu</string>
+	<string name="msgNoRoot">No eres root, para usar esta aplicación necesitas ser root primero</string>
+    <string name="msgNoBusybox">Busybox es necesario pero no está instalado, Desea instalar busybox?</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+</resources>
