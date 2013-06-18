@@ -2,16 +2,11 @@ package com.example.tethering421jiayu;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.IOException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
@@ -141,7 +136,7 @@ public class MainActivity extends Activity {
 						bos.flush();
 						bos.close();
 						/*AlertDialog dialog = new AlertDialog.Builder(getApplicationContext()).create();
-						dialog.setMessage("Proceso terminado correctamente\nAhora se abrirá la ventana de Wifi Theathering\nDebes en ese momento habilitar el twthering");
+						dialog.setMessage("Proceso terminado correctamente\nAhora se abrirï¿½ la ventana de Wifi Theathering\nDebes en ese momento habilitar el twthering");
 						dialog.show();
 						*/
 						startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
@@ -167,7 +162,7 @@ public class MainActivity extends Activity {
 			});
 			
     	} catch (Exception e) {
-			// TODO: handle exception
+    		Toast.makeText(getBaseContext(), getResources().getString(R.string.errorGenerico), Toast.LENGTH_SHORT).show();
 		} 
  
 	}

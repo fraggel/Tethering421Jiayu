@@ -6,4 +6,6 @@
     <string name="msgNoBusybox">Busybox es necesario pero no está instalado, Desea instalar busybox?</string>
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="errorGenerico">Ha ocurrido un error</string>
+    
 </resources>
