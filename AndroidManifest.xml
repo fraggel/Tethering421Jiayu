@@ -8,6 +8,8 @@
             android:minSdkVersion="8"
             android:targetSdkVersion="17"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
     <application
             android:allowBackup="true"
             android:icon="@drawable/ic_launcher"
@@ -24,6 +26,9 @@
         <receiver android:name=".MainReceiver" android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            <action android:name="android.intent.action.UMS_CONNECTED" />
+            <action android:name="android.intent.action.UMS_DISCONNECTED" />
         </intent-filter>
         </receiver>
     </application>
