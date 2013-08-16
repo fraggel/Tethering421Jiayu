@@ -3,7 +3,7 @@
 
     <string name="app_name">Tethering 4.2.1</string>
     <string name="buttonEnable">Configure Tethering</string>
-    <string name="textInicio">Once this app is installed, on every boot it will automatically configure your device (Only if you dont uninstall this app), through Android settings and you dont need to execute this app and enable it manually anymore.If you want to execute it manually click on "Configure tethering",after click Android settings will be opened to manually enable Tethering.\n</string>
+    <string name="textInicio">Once this app is installed, on every boot it will automatically configure your device (Only if you dont uninstall this app), through Android settings and you dont need to execute this app and enable it manually anymore.\n</string>
     <string name="rootBusy">* Root and Busybox must be installed</string>
     <string name="msgNoRoot">Your not Root, to use this app you need root first</string>
     <string name="msgNoBusybox">Busybox is necessary but isn´t installed, Install?</string>

@@ -22,21 +22,5 @@
             android:text="@string/textInicio"
             android:textAppearance="?android:attr/textAppearance"/>
 
-
-
-    <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/buttonEnable"
-            android:layout_below="@+id/textView1"
-            android:layout_alignLeft="@+id/textView1"/>
-    <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rootBusy"
-            android:layout_below="@+id/button1"
-            android:layout_alignLeft="@+id/button1"/>
 </RelativeLayout>
 </ScrollView>

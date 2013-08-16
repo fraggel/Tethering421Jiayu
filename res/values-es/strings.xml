@@ -3,7 +3,7 @@
 
     <string name="app_name">Tethering 4.2.1</string>
     <string name="buttonEnable">Configurar Tethering</string>
-    <string name="textInicio">Una vez instalada esta aplicación en cada reinicio se modificará lo necesario para que al activar el Tethering (Siempre que no se desinstale esta aplicación) este funcione con normalidad habilitando el tethering en la configuración de android con lo que no tendrás que volver a ejecutar esta aplicación y configurarlo manualmente.Si deseas ejecutarlo manualmente pulsa el botón "Configurar tethering", una vez pulsado se abrirá la configuración, en este momento habilita el tethering en la configuración de android y ya podrás utilizar el tethering.\n</string>
+    <string name="textInicio">Una vez instalada esta aplicación en cada reinicio se modificará lo necesario para que al activar el Tethering (Siempre que no se desinstale esta aplicación) este funcione con normalidad habilitando el tethering en la configuración de android con lo que no tendrás que volver a ejecutar esta aplicación y configurarlo manualmente.\n</string>
     <string name="rootBusy">* Root y Busybox debe estar instalado</string>
     <string name="msgNoRoot">No eres root, para usar esta aplicación necesitas ser root primero
     </string>

@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         res = getResources();
         root = Environment.getRootDirectory();
-        addListenerOnButton();
+        firstConfig();
         if (controlRoot()) {
             if (!controlBusybox()) {
                 instalarBusyBox();
@@ -120,52 +120,35 @@ public class MainActivity extends Activity {
         return busybox;
     }
 
-    public void addListenerOnButton() {
+    public void firstConfig() {
         try {
-            enable = (Button) findViewById(R.id.button1);
-            enable.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View arg0) {
-                    try {
-                        Runtime rt = Runtime.getRuntime();
-                        Process p = rt.exec("su");
-                        BufferedOutputStream bos = new BufferedOutputStream(p.getOutputStream());
-                        bos.write(("iptables -A POSTROUTING -s 192.168.45.1/24 -j MASQUERADE -t nat\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ap0 -o ccmni1\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni1 -o ap0\n").getBytes());
-                        bos.write(("iptables -A POSTROUTING -s 192.168.44.1/24 -j MASQUERADE -t nat\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ap0 -o ccmni2\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni2 -o ap0\n").getBytes());
-                        bos.write(("iptables -A POSTROUTING -s 192.168.43.1/24 -j MASQUERADE -t nat\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ap0 -o ccmni0\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni0 -o ap0\n").getBytes());
-                        bos.write(("iptables -A POSTROUTING -s 192.168.42.1/24 -j MASQUERADE -t nat\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o ccmni0\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni0 -o rndis0\n").getBytes());
-                        bos.write(("iptables -A POSTROUTING -s 192.168.41.1/24 -j MASQUERADE -t nat\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o wlan0\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i wlan0 -o rndis0\n").getBytes());
-                        bos.write(("iptables -A POSTROUTING -s 192.168.40.1/24 -j MASQUERADE -t nat\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o ccmni1\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni1 -o rndis0\n").getBytes());
-                        bos.write(("iptables -A POSTROUTING -s 192.168.39.1/24 -j MASQUERADE -t nat\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o ccmni2\n").getBytes());
-                        bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni2 -o rndis0\n").getBytes());
-                        bos.write(("busybox sysctl -w net.ipv4.ip_forward=1\n").getBytes());
-                        bos.flush();
-                        bos.close();
-                        /*AlertDialog dialog = new AlertDialog.Builder(getApplicationContext()).create();
-						dialog.setMessage("Proceso terminado correctamente\nAhora se abrir la ventana de Wifi Theathering\nDebes en ese momento habilitar el twthering");
-						dialog.show();
-						*/
-                        startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
-                        finish();
-                    } catch (Exception e) {
-
-                        e.printStackTrace();
-                    }
-                }
-
-            });
+                Runtime rt = Runtime.getRuntime();
+                Process p = rt.exec("su");
+                BufferedOutputStream bos = new BufferedOutputStream(p.getOutputStream());
+                bos.write(("iptables -A POSTROUTING -s 192.168.45.1/24 -j MASQUERADE -t nat\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ap0 -o ccmni1\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni1 -o ap0\n").getBytes());
+                bos.write(("iptables -A POSTROUTING -s 192.168.44.1/24 -j MASQUERADE -t nat\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ap0 -o ccmni2\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni2 -o ap0\n").getBytes());
+                bos.write(("iptables -A POSTROUTING -s 192.168.43.1/24 -j MASQUERADE -t nat\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ap0 -o ccmni0\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni0 -o ap0\n").getBytes());
+                bos.write(("iptables -A POSTROUTING -s 192.168.42.1/24 -j MASQUERADE -t nat\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o ccmni0\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni0 -o rndis0\n").getBytes());
+                bos.write(("iptables -A POSTROUTING -s 192.168.41.1/24 -j MASQUERADE -t nat\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o wlan0\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i wlan0 -o rndis0\n").getBytes());
+                bos.write(("iptables -A POSTROUTING -s 192.168.40.1/24 -j MASQUERADE -t nat\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o ccmni1\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni1 -o rndis0\n").getBytes());
+                bos.write(("iptables -A POSTROUTING -s 192.168.39.1/24 -j MASQUERADE -t nat\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i rndis0 -o ccmni2\n").getBytes());
+                bos.write(("iptables -A FORWARD -j ACCEPT -i ccmni2 -o rndis0\n").getBytes());
+                bos.write(("busybox sysctl -w net.ipv4.ip_forward=1\n").getBytes());
+                bos.flush();
+                bos.close();
         } catch (Exception e) {
             // TODO: handle exception
         }
